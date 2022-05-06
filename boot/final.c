@@ -1,4 +1,5 @@
 #include "graphics.c"
 #include "font.c"
 #include "input.c"
+#include "task.c"
 #include "main.c"

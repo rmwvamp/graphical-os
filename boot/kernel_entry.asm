@@ -28,10 +28,3 @@ LoadIDT:
 	lidt[IDTDesc]
 	sti
 	ret
-
-
-SECTION .bss
-
-stack_begin:
-    RESB 4096  ; Reserve 4 KiB stack space
-stack_end:

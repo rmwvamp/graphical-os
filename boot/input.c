@@ -483,8 +483,10 @@ unsigned char ProcessScancode(int scancode) {
             return '`';
         
     // shift pressed
-    else if (scancode == 0x2A)
+    else if (scancode == 0x2A) {
         shift_pressed = TRUE;
+        Scancode = -1;
+    }
         
         
     else if (scancode == 0x2B)
@@ -554,8 +556,10 @@ unsigned char ProcessScancode(int scancode) {
             return '/';
 
     // shift pressed    
-    else if (scancode == 0x36)
+    else if (scancode == 0x36) {
         shift_pressed = TRUE;
+        Scancode = -1;
+    }
         
 
     // alt pressed
@@ -567,21 +571,29 @@ unsigned char ProcessScancode(int scancode) {
         return ' ';
     
     // Caps pressed
-    else if (scancode == 0x3A)
+    else if (scancode == 0x3A) {
         if (caps_pressed == TRUE)
             caps_pressed = FALSE;
         else if (caps_pressed == FALSE)
             caps_pressed = TRUE;
+
+        Scancode = -1;
+    }
+        
         
 
     // shift released
-    if (scancode == 0xAA)
+    if (scancode == 0xAA) {
         shift_pressed = FALSE;
+        Scancode = -1;
+    }
         
 
     // shift released
-    if (scancode == 0xB6)
+    if (scancode == 0xB6) {
         shift_pressed = FALSE;
+        Scancode = -1;
+    }
 
     return '\0';
 }
