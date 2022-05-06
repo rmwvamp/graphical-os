@@ -22,7 +22,7 @@ section code
 
     mov bx, 0x1000 ; This is the location where the code is loaded from hard disk
     mov ah, 0x02
-    mov al, 21 ; The number of sectors to read from hard disk
+    mov al, 31 ; The number of sectors to read from hard disk
     mov ch, 0x00
     mov dh, 0x00
     mov cl, 0x02
